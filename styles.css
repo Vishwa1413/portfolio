@@ -1,0 +1,304 @@
+/* ================== GLOBAL RESET ================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #222;
+  background: #f5f9fc; /* Light academic background */
+  transition: background 0.5s ease;
+}
+
+/* ================== HEADER ================== */
+header {
+  background: linear-gradient(90deg, #0077b6, #00b4d8);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  animation: slideDown 1s ease forwards;
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+nav {
+  max-width: 1100px;
+  margin: auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: white;
+  letter-spacing: 1px;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+ul li a:hover {
+  background: #90e0ef;
+  color: #023e8a;
+  transform: translateY(-3px);
+}
+
+/* ================== HOME ================== */
+.home-box {
+  border: 2px solid #0077b6;
+  padding: 60px;
+  border-radius: 15px;
+  background: #ffffff;
+  max-width: 800px;
+  width: 100%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transform: translateY(40px);
+  opacity: 0;
+  animation: fadeUp 1s ease forwards 0.5s;
+}
+
+@keyframes fadeUp {
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.home-box h1 {
+  color: #0077b6;
+}
+
+.btn {
+  padding: 12px 20px;
+  border-radius: 8px;
+  margin: 10px;
+  cursor: pointer;
+  border: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: #0077b6;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #023e8a;
+  transform: scale(1.05);
+}
+
+.btn-secondary {
+  background: #90e0ef;
+  color: #023e8a;
+}
+
+.btn-secondary:hover {
+  background: #48cae4;
+  transform: scale(1.05);
+}
+
+/* ================== ABOUT ================== */
+.about-box {
+  border: 2px solid #00b4d8;
+  padding: 40px;
+  border-radius: 15px;
+  max-width: 800px;
+  background-color: #f8fdff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  transform: scale(0.95);
+  opacity: 0;
+  animation: fadeIn 1s ease forwards 0.8s;
+}
+
+.about-box:hover {
+  transform: scale(1);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes fadeIn {
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* ================== SKILLS ================== */
+.skills-container {
+  width: 100%;
+  max-width: 800px;
+  margin-top: 30px;
+  animation: fadeUp 1s ease forwards 1s;
+}
+
+.skill {
+  margin-bottom: 25px;
+  text-align: left;
+}
+
+.skill-name {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #0077b6;
+}
+
+.progress-bar {
+  width: 100%;
+  background: #e0f7fa;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress {
+  height: 25px;
+  line-height: 25px;
+  color: white;
+  padding-left: 10px;
+  border-radius: 10px;
+  font-weight: bold;
+  animation: grow 2s ease-in-out forwards;
+}
+
+@keyframes grow {
+  from { width: 0; }
+}
+
+.progress.html { width: 90%; background: #ff5722; }
+.progress.css { width: 85%; background: #2965f1; }
+.progress.js { width: 75%; background: #f0db4f; color: #000; }
+.progress.python { width: 80%; background: #4b8bbe; }
+
+/* ================== CONTACT ================== */
+#contact {
+  background: #edf6f9;
+  padding: 100px 20px;
+  animation: fadeIn 1s ease forwards 1.2s;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 15px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #0077b6;
+  box-shadow: 0 0 8px rgba(0, 119, 182, 0.3);
+}
+
+.contact-form button {
+  padding: 12px 20px;
+  background-color: #0077b6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.contact-form button:hover {
+  background: #023e8a;
+  transform: scale(1.05);
+}
+
+/* ================== FOOTER ================== */
+footer {
+  background: #023e8a;
+  color: #caf0f8;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.footer-content a {
+  color: #90e0ef;
+  text-decoration: none;
+  margin: 0 5px;
+  transition: color 0.3s ease;
+}
+
+.footer-content a:hover {
+  color: #ffffff;
+}
+
+/* ================== MEDIA QUERIES ================== */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  ul {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .home-box, .about-box {
+    padding: 30px;
+  }
+
+  .skills-container {
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 { font-size: 1.8rem; }
+  h2 { font-size: 1.4rem; }
+  .btn { width: 100%; }
+}
+/* Make all sections centered */
+section {
+  padding: 100px 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;  /* ✅ Center horizontally */
+  text-align: center;   /* ✅ Center text */
+}
+
+/* For Skills: center the container */
+.skills-container {
+  width: 100%;
+  max-width: 800px;
+  margin-top: 30px;
+  text-align: center;   /* ✅ Center labels */
+}
+
+/* Align skill name and bar centrally */
+.skill {
+  text-align: center;   /* ✅ Center each skill */
+}
+
+.progress-bar {
+  margin: 0 auto;       /* ✅ Center the progress bars */
+}
